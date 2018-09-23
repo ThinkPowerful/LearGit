@@ -51,7 +51,7 @@ public class ValidateLoginTest {
          */
         if (actualTitle.contentEquals(expectedTitle)){
             System.out.println("Test is passing!");
-            test.pass("Test Passed!");
+            test.pass("Test is passing!");
             FileUtils.copyFile(scrFile, new File("D:\\San\\Testing Guide\\E2E\\Reports\\Snapshots\\screenshot.png"));
             test.addScreenCaptureFromPath("screenshot.png");
         } else {
