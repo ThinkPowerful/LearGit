@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -51,10 +52,12 @@ public class ValidateLoginTest {
          */
         if (actualTitle.contentEquals(expectedTitle)){
             System.out.println("Test is passing!");
+            Assert.assertTrue(true);
             test.pass("Test is passing!");
             FileUtils.copyFile(scrFile, new File("D:\\San\\Testing Guide\\E2E\\Reports\\Snapshots\\screenshot.png"));
             test.addScreenCaptureFromPath("screenshot.png");
         } else {
+        	Assert.assertTrue(false);
             System.out.println("Test Failed");
             test.fail("Test Failed");
         }
